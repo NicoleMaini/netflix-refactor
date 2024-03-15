@@ -44,7 +44,9 @@ class Gallery extends Component {
 
         {this.state.isError === true && (
           <div>
-            <Alert variant="danger">Ops! Qualcosa è andato storto durante il reperimenti dati. Riprovi più tardi</Alert>
+            <Alert variant="danger" className="w-50 mx-auto">
+              Ops! Qualcosa è andato storto durante il reperimenti dati. Riprovi più tardi
+            </Alert>
           </div>
         )}
 

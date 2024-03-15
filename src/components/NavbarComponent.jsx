@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 
-function NavbarComponent(props) {
+function NavbarComponent() {
   return (
     <Navbar collapseOnSelect expand="lg" className="p-0">
       <Container fluid>
