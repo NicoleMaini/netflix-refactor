@@ -21,7 +21,7 @@ function NavbarComponent() {
             <Nav.Link className="nav-link" aria-current="page" href="#">
               Home
             </Nav.Link>
-            <Nav.Link className="nav-link active" aria-current="page" href="#">
+            <Nav.Link className="nav-link" aria-current="page" href="#">
               TV Shows
             </Nav.Link>
             <Nav.Link className="nav-link" href="#">
