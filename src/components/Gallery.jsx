@@ -65,7 +65,7 @@ const Gallery = props => {
 
       <Row>
         {sagas.map(movie => {
-          return <ImageComponent key={movie.imdbID} poster={movie.Poster} title={movie.Title} />;
+          return <ImageComponent key={movie.imdbID} id={movie.imdbID} poster={movie.Poster} title={movie.Title} />;
         })}
       </Row>
     </>

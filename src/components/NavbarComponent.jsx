@@ -3,36 +3,46 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
+import { Link, useLocation } from "react-router-dom";
 
 function NavbarComponent() {
+  // qui sto utilizzando questo hook per fornirmi un modo per mettere al corrente la navbar fissa di in che pagina siamo
+  const location = useLocation();
   return (
     <Navbar collapseOnSelect expand="lg" className="p-0">
       <Container fluid>
-        <Navbar.Brand href="#home">
+        <Link className="navbar-brand" aria-current="page" to="/home">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
             alt="netflix logo"
             height="30px"
           />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="nav-link" aria-current="page" href="#">
+            <Link className={location.pathname === "/" ? "nav-link active" : "nav-link"} aria-current="page" to="/">
               Home
-            </Nav.Link>
-            <Nav.Link className="nav-link" aria-current="page" href="#">
+            </Link>
+            <Link
+              to="/tv-shows"
+              className={location.pathname === "/tv-show" ? "nav-link active" : "nav-link"}
+              aria-current="page"
+            >
               TV Shows
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
-              Movies
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
+            </Link>
+            <Link
+              className={location.pathname === "/movie-details/:movieId" ? "nav-link active" : "nav-link"}
+              to="/movie-details/:movieId"
+            >
+              Movie Details
+            </Link>
+            <Link className={location.pathname === "/recently-add" ? "nav-link active" : "nav-link"} to="/recently-add">
               Recently Added
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#">
+            </Link>
+            <Link className={location.pathname === "/my-list" ? "nav-link active" : "nav-link"} to="/my-list">
               My List
-            </Nav.Link>
+            </Link>
           </Nav>
           <Nav className="align-items-center">
             <Button variant="">
